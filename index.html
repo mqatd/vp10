@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video.js Player - Full Width</title>
+
+    <!-- Include Video.js CSS -->
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+
+    <style>
+        /* Reset default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        /* Make video container full width */
+        .video-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Style the video player */
+        .video-js {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <!-- Video.js Player -->
+        <video
+            id="my-video"
+            class="video-js vjs-default-skin vjs-big-play-button vjs-16-9"
+            controls
+            preload="auto"
+            poster="https://vjs.zencdn.net/v/oceans.png"
+            data-setup="{}"
+        >
+            <!-- Sample video source - replace with your own video URL -->
+            <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+        </video>
+    </div>
+
+    <!-- Include Video.js JavaScript -->
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+    
+    <script>
+        // Initialize Video.js player
+        var player = videojs('my-video', {
+            responsive: true,
+            fluid: true
+        });
+    </script>
+</body>
+</html>
