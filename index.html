@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video.js Player - Full Width</title>
+    <title>Video.js Player - Dark Theme</title>
 
     <!-- Include Video.js CSS -->
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
@@ -16,8 +16,13 @@
             box-sizing: border-box;
         }
 
+        /* Dark theme styles */
         body {
             padding: 20px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
         }
 
         /* Make video container full width */
@@ -25,15 +30,44 @@
             width: 100%;
             max-width: 100%;
             margin: 0 auto;
+            /* Add subtle glow effect around the player */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         /* Style the video player */
         .video-js {
             width: 100%;
         }
+
+        /* Custom title styling */
+        .page-title {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        /* Custom Video.js skin modifications for dark theme */
+        .video-js .vjs-big-play-button {
+            background-color: rgba(43, 51, 63, 0.7);
+            border-color: #fff;
+        }
+
+        .video-js .vjs-control-bar {
+            background-color: rgba(43, 51, 63, 0.9);
+        }
+
+        .video-js .vjs-slider {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .video-js .vjs-play-progress {
+            background-color: #00ff00;
+        }
     </style>
 </head>
 <body>
+    <h1 class="page-title">Video Player</h1>
     <div class="video-container">
         <!-- Video.js Player -->
         <video
@@ -62,6 +96,9 @@
             responsive: true,
             fluid: true
         });
+
+        // Add a class to the player for dark theme
+        player.addClass('vjs-dark-theme');
     </script>
 </body>
 </html>
