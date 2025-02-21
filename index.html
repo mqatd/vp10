@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video.js Player - Dark Theme</title>
+    <title>jerrykingloerworks</title>
 
     <!-- Include Video.js CSS -->
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
@@ -18,11 +18,15 @@
 
         /* Dark theme styles */
         body {
-            padding: 20px;
             background-color: #1a1a1a;
             color: #ffffff;
             min-height: 100vh;
             font-family: Arial, sans-serif;
+            /* Add flex container for vertical centering */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
         }
 
         /* Make video container full width */
@@ -64,27 +68,56 @@
         .video-js .vjs-play-progress {
             background-color: #00ff00;
         }
+
+        /* Mobile-specific styles */
+        @media screen and (max-width: 768px) {
+            /* Create a wrapper for vertical centering */
+            .page-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                width: 100%;
+            }
+
+            /* Adjust spacing for mobile */
+            .page-title {
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+
+            body {
+                padding: 0;
+            }
+
+            .video-container {
+                padding: 0 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1 class="page-title">Video Player</h1>
-    <div class="video-container">
-        <!-- Video.js Player -->
-        <video
-            id="my-video"
-            class="video-js vjs-default-skin vjs-big-play-button vjs-16-9"
-            controls
-            preload="auto"
-            poster="https://vjs.zencdn.net/v/oceans.png"
-            data-setup="{}"
-        >
-            <!-- Sample video source - replace with your own video URL -->
-            <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
-            <p class="vjs-no-js">
-                To view this video please enable JavaScript, and consider upgrading to a
-                web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-            </p>
-        </video>
+    <div class="page-wrapper">
+        <h1 class="page-title">⚪⚫🔴🔵🟤🟣🟢🟡🟠</h1>
+        <div class="video-container">
+            <!-- Video.js Player -->
+            <video
+                id="my-video"
+                class="video-js vjs-default-skin vjs-big-play-button vjs-16-9"
+                controls
+                preload="auto"
+                poster="https://vjs.zencdn.net/v/oceans.png"
+                data-setup="{}"
+            >
+                <!-- Sample video source - replace with your own video URL -->
+                <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
     </div>
 
     <!-- Include Video.js JavaScript -->
